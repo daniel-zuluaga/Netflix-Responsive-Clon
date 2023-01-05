@@ -13,7 +13,7 @@ class CustomAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 24),
-      color: Colors.black.withOpacity((scroolOffset / 350).clamp(0, 1)),
+      color: Colors.black.withOpacity((scroolOffset / 350).clamp(0, 1).toDouble()),
       child: SafeArea(
         child: Row(
           children: [
@@ -25,15 +25,15 @@ class CustomAppBar extends StatelessWidget {
                 children: [
                   _AppBarButton(
                     title: "TV Show", 
-                    onTap: () => print("TV Show")
+                    onTap: () => debugPrint("TV Show")
                   ),
                   _AppBarButton(
                     title: "Movies", 
-                    onTap: () => print("Movies")
+                    onTap: () => debugPrint("Movies")
                   ),
                   _AppBarButton(
                     title: "My List", 
-                    onTap: () => print("My List")
+                    onTap: () => debugPrint("My List")
                   ),
                 ],
               ),
