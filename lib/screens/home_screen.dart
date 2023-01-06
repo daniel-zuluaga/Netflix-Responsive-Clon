@@ -49,7 +49,6 @@ class _HomeScreenState extends State<HomeScreen> {
           SliverToBoxAdapter(
               child: ContentHeader(
             featuredContent: sintelContent,
-            height: 600,
           )),
           SliverPadding(
             padding: EdgeInsets.only(top: 20),

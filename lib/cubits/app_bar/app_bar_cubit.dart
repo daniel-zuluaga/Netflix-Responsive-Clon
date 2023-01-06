@@ -1,5 +1,5 @@
+// ignore: depend_on_referenced_packages
 import 'package:bloc/bloc.dart';
-import 'package:meta/meta.dart';
 
 class AppBarCubit extends Cubit<double> {
   AppBarCubit() : super(0);
