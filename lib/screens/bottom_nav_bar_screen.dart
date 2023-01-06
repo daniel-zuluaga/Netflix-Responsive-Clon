@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:netflix_clon_responsive/cubits/cubits.dart';
 import 'package:netflix_clon_responsive/screens/screens.dart';
+import 'package:netflix_clon_responsive/widgets/widgets.dart';
 
 class BottomNavBarScreen extends StatefulWidget {
   const BottomNavBarScreen({super.key});
@@ -36,7 +37,8 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
         create: (_) => AppBarCubit(),
         child: _screen[_currentIndex],
       ),
-      bottomNavigationBar: BottomNavigationBar(
+      bottomNavigationBar: !Responsive.isDesktop(context) ?
+        BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
           backgroundColor: Colors.black,
           items: _icons
@@ -55,7 +57,8 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
           unselectedIconTheme: const IconThemeData(size: 30),
           onTap: (index) => setState(() {
                 _currentIndex = index;
-              })),
+              }))
+              : null,
     );
   }
 }
