@@ -18,6 +18,11 @@ iOS and Android:
 
 Desktop and web:
 
+<img width="1435" alt="Screenshot 2023-01-06 at 3 34 45 PM" src="https://user-images.githubusercontent.com/70453255/211097181-06a9cb74-2f60-4b27-a66b-ee6ac407d6f8.png">
+
+<img width="1440" alt="Screenshot 2023-01-06 at 3 37 49 PM" src="https://user-images.githubusercontent.com/70453255/211097203-88a940ae-a509-4494-9be2-07a2941f15ab.png">
+
+<img width="1440" alt="Screenshot 2023-01-06 at 3 45 19 PM" src="https://user-images.githubusercontent.com/70453255/211097197-afdaba15-b813-4f84-aa2b-17482cfb2459.png">
 
 # Program Lenguages and Package:
 -Dart
