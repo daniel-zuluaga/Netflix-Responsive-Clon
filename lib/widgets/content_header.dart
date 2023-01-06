@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:netflix_clon_responsive/models/content_model.dart';
 import 'package:netflix_clon_responsive/widgets/widgets.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 import 'package:video_player/video_player.dart';
 
 class ContentHeader extends StatelessWidget {
@@ -55,7 +56,7 @@ class _CustomContentHeaderMobile extends StatelessWidget {
           ),
         ),
         Positioned(
-          bottom: 110,
+          bottom: 160,
           child: SizedBox(
             width: 250,
             child: Image.asset(featuredContent.titleImageUrl!),
@@ -64,7 +65,7 @@ class _CustomContentHeaderMobile extends StatelessWidget {
         Positioned(
           left: 60,
           right: 60,
-          bottom: 150,
+          bottom: 100,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -73,8 +74,8 @@ class _CustomContentHeaderMobile extends StatelessWidget {
                 title: "My List",
                 onTap: () => debugPrint("My List")
               ),
-              ElevatedButtonWidget(
-                labelButton: const Text(
+              ElevatedButton.icon(
+                label: const Text(
                   "Play",
                   style: TextStyle(
                     color: Colors.black,
@@ -82,9 +83,16 @@ class _CustomContentHeaderMobile extends StatelessWidget {
                     fontSize: 20
                   ),
                 ),
-                childButton: const Icon(Icons.play_arrow_rounded, color: Colors.black,),
-                onTap: (){},
-                colorButton: Colors.white,
+                icon: const Icon(Icons.play_arrow_rounded, color: Colors.black,),
+                onPressed: (){
+                  final Content contentUrl = featuredContent;
+                  launchUrlString(contentUrl.urlInternetTrailer!);
+                },
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(
+                    Colors.white
+                  )
+                ),
               ),
               VerticalIconButton(
                 icon: Icons.info_outline_rounded,
@@ -115,6 +123,8 @@ class _CustomContentHeaderDesktop extends StatefulWidget {
 
 class _CustomContentHeaderDesktopState extends State<_CustomContentHeaderDesktop> {
   late VideoPlayerController _videoController;
+  late Content content;
+
   bool _isMuted = true;
 
   @override
@@ -135,6 +145,7 @@ class _CustomContentHeaderDesktopState extends State<_CustomContentHeaderDesktop
 
   @override
   Widget build(BuildContext context) {
+
     return GestureDetector(
       onTap: () => _videoController.value.isPlaying
           ? _videoController.pause()
@@ -173,9 +184,9 @@ class _CustomContentHeaderDesktopState extends State<_CustomContentHeaderDesktop
             ),
           ),
           Positioned(
-            left: 60.0,
-            right: 60.0,
-            bottom: 150.0,
+            left: 60,
+            right: 60,
+            bottom: 150,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -183,7 +194,7 @@ class _CustomContentHeaderDesktopState extends State<_CustomContentHeaderDesktop
                   width: 250.0,
                   child: Image.asset(widget.featuredContent.titleImageUrl!),
                 ),
-                const SizedBox(height: 15.0),
+                const SizedBox(height: 20),
                 Text(
                   widget.featuredContent.description!,
                   style: const TextStyle(
@@ -202,14 +213,21 @@ class _CustomContentHeaderDesktopState extends State<_CustomContentHeaderDesktop
                 const SizedBox(height: 20.0),
                 Row(
                   children: [
-                    ElevatedButtonWidget(
-                      onTap: (){},
-                      childButton: const Icon(
+                    ElevatedButton.icon( 
+                      onPressed: () {
+                        final contentUrl = content;
+                        launchUrlString(contentUrl.urlInternetTrailer!);
+                      },
+                      icon: const Icon(
                         Icons.play_arrow_rounded,
                         color: Colors.black,
                       ),
-                      colorButton: Colors.white,
-                      labelButton: const Text(
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all(
+                          Colors.white
+                        )
+                      ),
+                      label: const Text(
                         'Play',
                         style: TextStyle(
                           color: Colors.black,

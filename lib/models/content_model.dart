@@ -5,6 +5,7 @@ class Content {
   final String imageUrl;
   final String? titleImageUrl;
   final String? videoUrl;
+  final String? urlInternetTrailer;
   final String? description;
   final Color? color;
 
@@ -15,5 +16,6 @@ class Content {
     this.videoUrl,
     this.description,
     this.color,
+    this.urlInternetTrailer, 
   });
 }

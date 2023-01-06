@@ -7,9 +7,11 @@ class Assets {
   static const String sintel = '${_images}sintel.jpg';
   static const String sintelTitle = '${_images}sintel_title.png';
   static const String sintelVideoUrl = 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4';
+  static const String sintelUrlVideoInter = "https://www.youtube.com/watch?v=zRsyhv9SiSg";
 
   static const String atla = '${_images}atla.jpg';
   static const String atlaTitle = '${_images}atla_title.png';
+  static const String atlaUrl = "https://www.youtube.com/watch?v=Cg_vpSEhn2o";
 
   static const String blackMirror = '${_images}black_mirror.jpg';
   static const String blackMirrorTitle = '${_images}black_mirror_title.png';
@@ -28,6 +30,8 @@ class Assets {
   static const String htsdof = '${_images}htsdof.jpg';
   static const String kakegurui = '${_images}kakegurui.jpg';
   static const String strangerThings = '${_images}stranger_things.jpg';
+  static const String urlStrangerThings = "https://www.youtube.com/watch?v=x7Yq9MJUqjY";
+
   static const String teotfw = '${_images}teotfw.jpg';
   static const String thirteenReasonsWhy = '${_images}thirteen_reasons_why.jpg';
   static const String tigerKing = '${_images}tiger_king.jpg';

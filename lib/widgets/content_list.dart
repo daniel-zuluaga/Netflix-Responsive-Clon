@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:netflix_clon_responsive/models/content_model.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class ContentList extends StatelessWidget {
 
@@ -18,6 +19,8 @@ class ContentList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Content content;
+
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 10),
       child: Column(
@@ -46,7 +49,9 @@ class ContentList extends StatelessWidget {
               itemBuilder: (context, index) {
                 final Content content = contentList[index];
                 return GestureDetector(
-                  onTap: () => debugPrint(content.name),
+                  onTap: () {
+                    launchUrlString(content.urlInternetTrailer!);
+                  } ,
                   child: Container(
                     margin: const EdgeInsets.symmetric(horizontal: 8),
                     height: isOriginals! ? 400 : 200,

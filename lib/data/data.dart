@@ -9,6 +9,7 @@ const Content sintelContent = Content(
   imageUrl: Assets.sintel,
   titleImageUrl: Assets.sintelTitle,
   videoUrl: Assets.sintelVideoUrl,
+  urlInternetTrailer: Assets.sintelUrlVideoInter,
   description:
       'A lonely young woman, Sintel, helps and befriends a dragon,\nwhom she calls Scales. But when he is kidnapped by an adult\ndragon, Sintel decides to embark on a dangerous quest to find\nher lost friend Scales.',
 );
@@ -19,6 +20,7 @@ const List<Content> previews = [
     imageUrl: Assets.atla,
     color: Colors.orange,
     titleImageUrl: Assets.atlaTitle,
+    urlInternetTrailer: Assets.atlaUrl
   ),
   Content(
     name: 'The Crown',
@@ -90,7 +92,11 @@ const List<Content> myList = [
 ];
 
 const List<Content> originals = [
-  Content(name: 'Stranger Things', imageUrl: Assets.strangerThings),
+  Content(
+    name: 'Stranger Things', 
+    imageUrl: Assets.strangerThings,
+    urlInternetTrailer: Assets.urlStrangerThings
+  ),
   Content(name: 'The Witcher', imageUrl: Assets.witcher),
   Content(name: 'The Umbrella Academy', imageUrl: Assets.umbrellaAcademy),
   Content(name: '13 Reasons Why', imageUrl: Assets.thirteenReasonsWhy),

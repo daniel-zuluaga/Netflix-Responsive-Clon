@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:netflix_clon_responsive/models/content_model.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class Previews extends StatelessWidget {
 
@@ -38,8 +39,11 @@ class Previews extends StatelessWidget {
             itemCount: contentList.length,
             itemBuilder: (BuildContext context, int index) {
               final Content content = contentList[index];
+              final Content contentUrl = content;
               return GestureDetector(
-                onTap: () => debugPrint(content.name),
+                onTap: () {
+                  launchUrlString(contentUrl.urlInternetTrailer!);
+                },
                 child: Stack(
                   alignment: Alignment.center,
                   children: [
