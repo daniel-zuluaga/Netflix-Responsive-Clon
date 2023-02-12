@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:micro_app_netflix_clon/atoms/widgets/widgets.dart';
+import 'package:micro_app_netflix_clon/foundations/colors_foundation.dart';
+import 'package:netflix_clon_responsive/assets.dart';
 import 'package:netflix_clon_responsive/cubits/cubits.dart';
 import 'package:netflix_clon_responsive/data/data.dart';
-import 'package:netflix_clon_responsive/widgets/widgets.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({required Key key}) : super(key: key);
@@ -40,7 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
           preferredSize: Size(screenSize.width, 50),
           child: BlocBuilder<AppBarCubit, double>(
             builder: (context, scrollOffset) {
-              return CustomAppBar(scroolOffset: scrollOffset);
+              return CustomAppBar(scroolOffset: scrollOffset, imageUrlDesktop: Assets.netflixLogo1, imageUrlMobile: Assets.netflixLogo0,);
             },
           )),
       body: CustomScrollView(
@@ -95,7 +97,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
-        backgroundColor: Colors.grey[900],
+        backgroundColor: h1Color,
         child: const Icon(Icons.cast_rounded),
       ),
     );

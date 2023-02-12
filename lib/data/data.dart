@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:micro_app_netflix_clon/atoms/models/models.dart';
 import 'package:netflix_clon_responsive/assets.dart';
-
-import '../models/content_model.dart';
 
 
 const Content sintelContent = Content(
