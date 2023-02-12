@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:micro_app_netflix_clon/atoms/widgets/widgets.dart';
 import 'package:netflix_clon_responsive/cubits/cubits.dart';
 import 'package:netflix_clon_responsive/screens/screens.dart';
-import 'package:netflix_clon_responsive/widgets/widgets.dart';
+import 'package:netflix_clon_responsive/screens/search_screen.dart';
 
 class BottomNavBarScreen extends StatefulWidget {
   const BottomNavBarScreen({super.key});
@@ -14,7 +15,7 @@ class BottomNavBarScreen extends StatefulWidget {
 class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
   final List<Widget> _screen = [
     const HomeScreen(key: PageStorageKey("homeScreen")),
-    const Scaffold(),
+    const SearchScreen(),
     const Scaffold(),
     const Scaffold(),
     const Scaffold(),

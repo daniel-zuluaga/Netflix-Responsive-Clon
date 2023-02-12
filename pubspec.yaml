@@ -31,7 +31,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
+  micro_app_netflix_clon:
+    git:
+      url: https://github.com/daniel-zuluaga/micro-App-Netflix-Clon.git
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
